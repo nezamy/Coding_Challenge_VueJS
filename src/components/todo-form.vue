@@ -21,8 +21,10 @@ export default {
   },
   methods: {
     add(){
-      this.$emit('add', this.task);
-      this.task = '';
+      if(this.task){
+        this.$emit('add', this.task);
+        this.task = '';
+      }
     }
   },
 }
