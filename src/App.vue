@@ -1,24 +1,28 @@
 <template>
   <v-app>
-    <v-toolbar
+    <!-- <v-toolbar
       app
     >
       <v-toolbar-title v-text="title"/>
-    </v-toolbar>
+    </v-toolbar> -->
     <v-content>
       <v-layout
         align-center
         fill-height
         justify-center
       >
-        <v-flex xs6>
-          <h1 class="font-weight-regular">Todo Ap</h1>
-          <TodoList 
-            :tasks="tasks" 
-            @update="update"
-            @remove="remove" />
+        <v-flex 
+          xs10 
+          md8>
+          <h1 class="font-weight-regular white--text py-4">Todo App</h1>
+          <v-card>
+            <TodoList 
+              :tasks="tasks" 
+              @update="update"
+              @remove="remove" />
 
-          <TodoForm @add="add"/>
+            <TodoForm @add="add"/>
+          </v-card>
 
         </v-flex>
       </v-layout>
@@ -70,3 +74,9 @@ export default {
   }
 }
 </script>
+<style lang="css">
+  .theme--light.application{
+    background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
+  }
+</style>
+

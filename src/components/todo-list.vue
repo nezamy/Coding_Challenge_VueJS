@@ -2,7 +2,17 @@
   <div>
     
     <v-list subheader>
-      <v-subheader>You have {{ tasks.length }} task to do</v-subheader>
+      <v-subheader v-if="tasks.length && completed.length">
+        You have <span class="cyan--text">{{ completed.length }}</span> pending tasks 
+      </v-subheader>
+      <v-subheader 
+        v-if="!completed.length && tasks.length"
+        class="cyan--text">
+        <v-icon class="cyan--text px-1">emoji_emotions</v-icon> Congratulations you completed all tasks
+      </v-subheader>
+      <v-subheader v-if="!tasks.length">
+        You dont have Tasks to do. Add first task now
+      </v-subheader>
       <TodoItem 
         v-if="tasks"
         v-for="task in tasks" 
@@ -13,8 +23,6 @@
         @update="update"
         @remove="remove"
       />
-      <v-divider />
-  
     </v-list>
   </div>
 </template>
@@ -30,6 +38,13 @@ export default {
   components: {
     TodoItem,
   },
+  computed: {
+    completed(){
+      return this.tasks.filter(v => {
+        return !v.completed;
+      })
+    }
+  },
   methods: {
     update(task){
       this.$emit('update', task);
@@ -42,4 +57,8 @@ export default {
 </script>
 
 <style lang="css">
+  span{
+    display: inline-block;
+    margin: 0 4px;
+  }
 </style>

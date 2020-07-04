@@ -1,9 +1,9 @@
 <template lang="html">
-  <div>
+  <div class="todo-item">
     <v-list-tile @click="update({completed: !completed})">
     
       <v-list-tile-action>
-        <v-icon :color="completed ? 'green accent-4' : 'grey'">{{ completed ? 'done' : 'check_box_outline_blank' }}</v-icon>
+        <v-icon :color="completed ? 'cyan accent-3' : 'grey'">{{ completed ? 'done' : 'check_box_outline_blank' }}</v-icon>
       </v-list-tile-action>
 
       <v-list-tile-content>
@@ -19,7 +19,7 @@
           flat
           icon
           @click="remove(id)">
-          <v-icon color="red">delete</v-icon>
+          <v-icon color="deep-orange lighten-1">delete</v-icon>
         </v-btn>
       </v-list-tile-action>
 
@@ -53,7 +53,15 @@ export default {
 
 <style lang="css">
 .complete-task{
-  text-decoration: line-through;
-  color: gray;
+  color: #BBB;
 }
+.complete-task:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #00E5FF;
+  top: 50%;
+}
+.todo-item:last-child + hr{display: none;}
 </style>

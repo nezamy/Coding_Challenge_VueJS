@@ -3,6 +3,7 @@
     label="Todo"
     placeholder="What do you have to do?"
     solo
+    hide-details
     @keydown.enter="add"
     v-model="task"
   />
@@ -26,6 +27,3 @@ export default {
   },
 }
 </script>
-
-<style lang="css">
-</style>
