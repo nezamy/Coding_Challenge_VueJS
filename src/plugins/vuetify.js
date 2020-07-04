@@ -5,13 +5,18 @@ import {
   VNavigationDrawer,
   VFooter,
   VList,
+  VSubheader,
   VBtn,
   VIcon,
   VGrid,
   VToolbar,
   VCard,
   VTextField,
-  transitions
+  VDivider,
+  transitions,
+  VParallax
+
+
 } from 'vuetify'
 import 'vuetify/src/stylus/app.styl'
 
@@ -21,12 +26,15 @@ Vue.use(Vuetify, {
     VNavigationDrawer,
     VFooter,
     VList,
+    VSubheader,
     VBtn,
     VIcon,
     VGrid,
     VToolbar,
     VCard,
     VTextField,
-    transitions
+    VDivider,
+    transitions,
+    VParallax
   },
 })
