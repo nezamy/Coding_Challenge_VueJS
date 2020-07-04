@@ -61,4 +61,12 @@ export default {
     display: inline-block;
     margin: 0 4px;
   }
+  .v-list__tile{min-height:48px;}
+  .v-list__tile__title, .v-list__tile{height: auto;}
+  .v-list__tile__title{
+    padding: 10px 0;
+    white-space: inherit;
+    overflow: visible;
+    text-overflow: unset;
+  }
 </style>
